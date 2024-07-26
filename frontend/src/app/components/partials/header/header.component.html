@@ -1,26 +1,24 @@
-
 <header>
-    <div class="container">
-      <a routerLink="/" class="logo">DO IT YOURSELF!</a>
-      <nav>
-        <ul>
-          <li>
-            <a routerLink="/login">Login</a>
-          </li>
-          <li class="menu-container">
-            <a routerLink="/dashboard">Questions</a>
-            <div class="menu">
-              <a routerLink="/profile">Profile</a>
-              <a routerLink="/orders">Questions</a>
-              <a routerLink="/logout">Logout</a>
-            </div>
-          </li>
-          <li>
-            <a routerLink="/cart-page">
-              Done <span>Done after the Questions</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="container">
+    <a routerLink="/" class="logo" href="/">DO IT YOURSELF!</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isLoggedIn"><a routerLink="/login" href="/login">Login</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+        <li class="menu-container">
+          <a routerLink="/dashboard" href="/dashboard">Dashboard</a> <!-- Ensure this route exists -->
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Questions</a>
+            <a routerLink="/logout">Logout</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            BLOG <span>Done after the Questions</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
